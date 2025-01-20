@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
-import { IncidentFormComponent } from './incident-form/incident-form.component';
+import { RouterLink, RouterOutlet } from '@angular/router';
+
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, IncidentFormComponent],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

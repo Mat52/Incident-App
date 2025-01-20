@@ -1,44 +1,123 @@
+$primary-color: #007bff;
+$primary-hover-color: #0056b3;
+$border-color: #ddd;
+$background-color: #f9f9f9;
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eef1f7;
+}
+
+/* Główne style formularza */
+.main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .content {
-    .navbar {
-        width: 100%; // Ustaw szerokość na całą stronę
-        margin: 0; // Usuń marginesy
-        padding: 0; // Usuń dodatkowe odstępy
-        background-color: #000 !important; // Ustaw tło na czarne (dodajemy !important aby nadpisać domyślne style)
-        position: fixed; // Przypięcie navbaru do góry strony
-        top: 0; // Ustawienie navbaru na górze
-        left: 0; // Ustawienie navbaru od lewej krawędzi
-        z-index: 1000; // Ustawienie wysokiego z-index, aby navbar był nad innymi elementami
-        width: 100%; // Szerokość na całą stronę
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; // Centering content horizontally
+    padding: 20px;
+}
+
+.form-container {
+    width: 100%; // Pełna szerokość formularza
+    max-width: 800px; // Możesz ograniczyć szerokość formularza do max 800px
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    background-color: $background-color;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+
+    label {
+        font-weight: 600;
+        margin-bottom: 8px;
+        display: block;
     }
 
-    nav.navbar {
-        width: 100%; // Dodatkowe zabezpieczenie dla elementu <nav>
+    input,
+    textarea {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border: 1px solid $border-color;
+        border-radius: 6px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+        &:focus {
+            border-color: $primary-color;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
     }
 
-    .navbar-nav .nav-link {
-        color: white !important; // Kolor tekstu na biały
-        font-weight: bold; // Pogrubienie tekstu
-    }
-
-    .navbar-brand {
-        color: white !important; // Kolor napisu w logo (brand) na biały
-        font-weight: bold; // Pogrubienie tekstu w logo
-    }
-
-    .navbar-toggler-icon {
-        background-color: white; // Zmiana koloru ikony menu (hamburger)
+    textarea {
+        resize: vertical;
+        min-height: 150px;
     }
 }
 
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    background-color: $primary-color;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        background-color: $primary-hover-color;
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        background-color: darken($primary-color, 10%);
+        transform: translateY(0);
+    }
+}
+
+/* Stylizacja navbaru i kontenera - NIC nie zmieniamy w tym miejscu */
+.content .navbar {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000 !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
 .container-fluid {
-    padding-top: 60px; // Ustalamy odstęp na górze, aby nie nachodzić na sticky navbar
-    height: 100vh; // Kontener zajmuje całą wysokość ekranu
+    padding-top: 60px;
+    /* Zapewni odstęp dla sticky navbar */
+    height: 100vh;
 
     .row {
-        flex-grow: 1; // Równomierne rozciąganie rzędów
+        flex-grow: 1;
 
         .col-md-6 {
-            padding: 0; // Usuń marginesy wewnętrzne dla kolumny
+            padding: 0;
 
             h2 {
                 margin-bottom: 15px;
@@ -55,48 +134,30 @@
 
             img {
                 max-width: 100%;
-                height: 100%; // Ustaw wysokość obrazu na 100% (aby zdjęcie wypełniło cały blok)
-                object-fit: cover; // Dopasowanie obrazu bez zachowania proporcji
+                height: 100%;
+                object-fit: cover;
             }
         }
-
-        &.navbar-row {
-            height: auto; // Navbar ma tylko swoją naturalną wysokość
-        }
     }
-}
-
-.img-full {
-    width: 100%; // Obraz wypełnia całą szerokość
-    height: 100%; // Obraz wypełnia całą wysokość
-    object-fit: cover; // Dopasowanie obrazu bez zachowania proporcji
 }
 
 .footer {
-    background-color: #333; // Tło stopki, ciemny odcień
-    color: white; // Kolor tekstu na biały
-    text-align: center; // Wyśrodkowanie tekstu
-    padding: 10px 0; // Dodanie przestrzeni wokół tekstu
-    position: fixed; // Przypięcie stopki na dole
-    left: 0; // Ustawienie stopki od lewej krawędzi
-    bottom: 0; // Przypięcie stopki do dołu ekranu
-    width: 100%; // Rozciągnięcie na całą szerokość ekranu
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 
     p {
-        margin: 5px 0; // Odstępy między liniami tekstu
-        font-size: 1rem; // Rozmiar czcionki
-    }
-
-    // Można dodać stylizację dla mediów (np. dla urządzeń mobilnych)
-    @media (max-width: 576px) {
-        .footer {
-            padding: 10px 0; // Zmniejszenie przestrzeni na małych ekranach
-        }
+        margin: 5px 0;
+        font-size: 1rem;
     }
 }
 
-/* Ukrycie poziomego paska przewijania */
 html,
 body {
-    overflow-x: hidden; // Ukrywa poziomy suwak
+    overflow-x: hidden;
 }

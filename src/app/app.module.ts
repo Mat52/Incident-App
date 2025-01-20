@@ -5,6 +5,8 @@ import { IncidentFormComponent } from './incident-form/incident-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { CommonModule } from '@angular/common';
+
 
 
 @NgModule({
@@ -15,7 +17,10 @@ import { AppRoutingModule } from './app-routing.module';
     imports: [
         BrowserModule,
         ReactiveFormsModule,
-        AppRoutingModule
+        AppRoutingModule,
+        RouterModule,
+        CommonModule
+
     ],
     providers: [],
     bootstrap: [AppComponent]
