@@ -1,27 +1,29 @@
-<div class="form-container">
-    <h2>Incident Form</h2>
-    <form (ngSubmit)="onSubmit()">
-        <!-- Name field -->
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" formControlName="name" required>
-        </div>
+<div class="container-fluid">
+    <div class="row flex-grow-1">
+        <h2>Incident Form</h2>
+        <form (ngSubmit)="onSubmit()">
+            <!-- Name field -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" formControlName="name" required>
+            </div>
 
-        <!-- Address field -->
-        <div class="form-group">
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" formControlName="address" required>
-        </div>
+            <!-- Address field -->
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" formControlName="address" required>
+            </div>
 
-        <!-- Description field -->
-        <div class="form-group">
-            <label for="description">Description:</label>
-            <textarea id="description" name="description" formControlName="description" required></textarea>
-        </div>
+            <!-- Description field -->
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" formControlName="description" required></textarea>
+            </div>
 
-        <!-- Submit button -->
-        <div class="form-group">
-            <button type="submit">Wyślij</button>
-        </div>
-    </form>
+            <!-- Submit button -->
+            <div class="form-group">
+                <button type="submit">Wyślij</button>
+            </div>
+        </form>
+    </div>
 </div>

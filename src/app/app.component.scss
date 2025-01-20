@@ -27,8 +27,6 @@ body {
 
 .form-container {
     width: 100%; // Pełna szerokość formularza
-    max-width: 800px; // Możesz ograniczyć szerokość formularza do max 800px
-    margin-top: 30px;
     padding: 20px;
     border: 1px solid $border-color;
     border-radius: 8px;
@@ -105,7 +103,7 @@ button {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
+
 }
 
 .container-fluid {

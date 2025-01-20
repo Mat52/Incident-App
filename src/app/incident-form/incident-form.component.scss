@@ -1,83 +1,193 @@
-$primary-color: #007bff;
-$primary-hover-color: #0056b3;
-$border-color: #ccc;
-$background-color: #f9f9f9;
-$error-color: #ff4d4d;
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 10px;
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+    /* Zajmuje całą wysokość komponentu */
+    max-width: 600px;
+    /* Maksymalna szerokość formularza */
+    margin: 0 auto;
+    /* Wyśrodkowanie formularza */
+    background-color: #f9f9f9;
+    /* Kolor tła formularza */
+    border-radius: 8px;
+    /* Zaokrąglone rogi formularza */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Dodanie cienia */
 }
 
-.form-container {
-    max-width: 600px; // Increased width
-    margin: 50px auto;
-    padding: 30px;
-    border: 1px solid $border-color;
-    border-radius: 8px;
-    background-color: $background-color;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-    h2 {
-        text-align: center;
-        margin-bottom: 25px;
-        font-size: 1.5rem;
-        color: #333;
+form {
+    width: 100%;
+    /* Formularz zajmuje całą szerokość kontenera */
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    /* Przestrzeń między polami formularza */
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input,
+textarea {
+    width: 100%;
+    /* Pola wejściowe zajmują całą szerokość */
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* Uwzględnia padding w szerokości */
+}
+
+textarea {
+    resize: vertical;
+    /* Pozwól na zmianę rozmiaru w pionie */
+    min-height: 100px;
+    /* Minimalna wysokość dla tekstarea */
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    /* Przycisk na całą szerokość formularza */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
+        /* Zmniejszenie szerokości formularza na mniejszych ekranach */
+        padding: 15px;
     }
 
-    .form-group {
-        margin-bottom: 20px;
+    button {
+        font-size: 1rem;
+    }
+}
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-size: 1rem;
-        }
+.content {
+    .navbar {
+        width: 100%; // Ustaw szerokość na całą stronę
+        margin: 0; // Usuń marginesy
+        padding: 0; // Usuń dodatkowe odstępy
+        background-color: #000 !important; // Ustaw tło na czarne (dodajemy !important aby nadpisać domyślne style)
+        position: fixed; // Przypięcie navbaru do góry strony
+        top: 0; // Ustawienie navbaru na górze
+        left: 0; // Ustawienie navbaru od lewej krawędzi
+        z-index: 1000; // Ustawienie wysokiego z-index, aby navbar był nad innymi elementami
+        width: 100%; // Szerokość na całą stronę
+    }
 
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            font-size: 1rem;
-            border: 1px solid $border-color;
-            border-radius: 5px;
-            box-sizing: border-box;
-            margin-top: 5px;
-        }
+    nav.navbar {
+        width: 100%; // Dodatkowe zabezpieczenie dla elementu <nav>
+    }
 
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
+    .navbar-nav .nav-link {
+        color: white !important; // Kolor tekstu na biały
+        font-weight: bold; // Pogrubienie tekstu
+    }
 
-        .error-message {
-            color: $error-color;
-            font-size: 0.875rem;
-            margin-top: 5px;
-        }
+    .navbar-brand {
+        color: white !important; // Kolor napisu w logo (brand) na biały
+        font-weight: bold; // Pogrubienie tekstu w logo
+    }
 
-        button {
-            width: 100%;
-            padding: 12px;
-            font-size: 1.1rem;
-            border: none;
-            background-color: $primary-color;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+    .navbar-toggler-icon {
+        background-color: white; // Zmiana koloru ikony menu (hamburger)
+    }
+}
 
-            &:hover {
-                background-color: $primary-hover-color;
+.container-fluid {
+    padding-top: 60px; // Ustalamy odstęp na górze, aby nie nachodzić na sticky navbar
+    height: 100vh; // Kontener zajmuje całą wysokość ekranu
+
+    .row {
+        flex-grow: 1; // Równomierne rozciąganie rzędów
+
+        .col-md-6 {
+            padding: 0; // Usuń marginesy wewnętrzne dla kolumny
+
+            h2 {
+                margin-bottom: 15px;
             }
 
-            &:disabled {
-                background-color: #ccc;
-                cursor: not-allowed;
+            p {
+                margin-bottom: 20px;
+                font-size: 1.1rem;
             }
+
+            button {
+                font-size: 1rem;
+            }
+
+            img {
+                max-width: 100%;
+                height: 100%; // Ustaw wysokość obrazu na 100% (aby zdjęcie wypełniło cały blok)
+                object-fit: cover; // Dopasowanie obrazu bez zachowania proporcji
+            }
+        }
+
+        &.navbar-row {
+            height: auto; // Navbar ma tylko swoją naturalną wysokość
         }
     }
+}
+
+.img-full {
+    width: 100%; // Obraz wypełnia całą szerokość
+    height: 100%; // Obraz wypełnia całą wysokość
+    object-fit: cover; // Dopasowanie obrazu bez zachowania proporcji
+}
+
+.footer {
+    background-color: #333; // Tło stopki, ciemny odcień
+    color: white; // Kolor tekstu na biały
+    text-align: center; // Wyśrodkowanie tekstu
+    padding: 10px 0; // Dodanie przestrzeni wokół tekstu
+    position: fixed; // Przypięcie stopki na dole
+    left: 0; // Ustawienie stopki od lewej krawędzi
+    bottom: 0; // Przypięcie stopki do dołu ekranu
+    width: 100%; // Rozciągnięcie na całą szerokość ekranu
+
+    p {
+        margin: 5px 0; // Odstępy między liniami tekstu
+        font-size: 1rem; // Rozmiar czcionki
+    }
+
+    // Można dodać stylizację dla mediów (np. dla urządzeń mobilnych)
+    @media (max-width: 576px) {
+        .footer {
+            padding: 10px 0; // Zmniejszenie przestrzeni na małych ekranach
+        }
+    }
+}
+
+/* Ukrycie poziomego paska przewijania */
+html,
+body {
+    overflow-x: hidden; // Ukrywa poziomy suwak
 }
