@@ -1,28 +1,44 @@
-<div class="container-fluid">
+<div class="container-fluid" style="text-align: center;">
     <div class="row flex-grow-1">
         <h2>Incident Form</h2>
         <form (ngSubmit)="onSubmit()">
-            <!-- Name field -->
+            <!-- Incident Name field -->
             <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" formControlName="name" required>
+                <label for="incidentName">Incident Name:</label>
+                <input type="text" id="incidentName" name="incidentName" formControlName="incidentName" required>
             </div>
 
-            <!-- Address field -->
+            <!-- Priority field -->
             <div class="form-group">
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address" formControlName="address" required>
+                <label for="priority">Priority:</label>
+                <select id="priority" name="priority" formControlName="priority" required>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
             </div>
 
-            <!-- Description field -->
+            <!-- Requested By field -->
             <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" formControlName="description" required></textarea>
+                <label for="requestedBy">Requested By:</label>
+                <input type="text" id="requestedBy" name="requestedBy" formControlName="requestedBy" required>
+            </div>
+
+            <!-- Date field -->
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" formControlName="date" required>
+            </div>
+
+            <!-- Time field -->
+            <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" formControlName="time" required>
             </div>
 
             <!-- Submit button -->
             <div class="form-group">
-                <button type="submit">Wyślij</button>
+                <button type="submit">Submit</button>
             </div>
         </form>
     </div>

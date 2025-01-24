@@ -6,20 +6,25 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http'
+import { MapComponent } from './map/map.component';
 
 
 
 @NgModule({
     declarations: [
         AppComponent,
-        IncidentFormComponent
+        IncidentFormComponent,
+        MapComponent
     ],
     imports: [
         BrowserModule,
         ReactiveFormsModule,
         AppRoutingModule,
         RouterModule,
-        CommonModule
+        CommonModule,
+        HttpClientModule,
+
 
     ],
     providers: [],
