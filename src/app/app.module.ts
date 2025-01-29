@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http'
 import { MapComponent } from './map/map.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 
@@ -15,7 +16,8 @@ import { MapComponent } from './map/map.component';
     declarations: [
         AppComponent,
         IncidentFormComponent,
-        MapComponent
+        MapComponent,
+        ContactUsComponent
     ],
     imports: [
         BrowserModule,

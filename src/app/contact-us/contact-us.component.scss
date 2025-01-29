@@ -1,0 +1,47 @@
+// src/app/contact-us/contact-us.component.scss
+
+.contact-us-container {
+    position: absolute;
+    top: 60px; /* adjust this value to match the padding-top of the .content element */
+    left: 0;
+    width: 100%;
+
+  .form-group {
+    margin-bottom: 20px;
+
+    label {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  }
+
+  button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
