@@ -1,42 +1,15 @@
 <div class="container-fluid" style="text-align: center;">
     <div class="row flex-grow-1">
         <h2>Incident Form</h2>
-        <form (ngSubmit)="onSubmit()">
+        <form (ngSubmit)="onSubmit()" *ngIf="!submitted">
             <!-- Incident Name field -->
             <div class="form-group">
-                <label for="incidentName">Incident Name:</label>
-                <input type="text" id="incidentName" name="incidentName" formControlName="incidentName" required>
+                <label for="incidentName">Incident title:</label>
+                <input type="text" class="form-control" id="incidentName" name="incidentName"
+                    formControlName="incidentName" [(ngModel)]="model.title" required>
             </div>
 
-            <!-- Priority field -->
-            <div class="form-group">
-                <label for="priority">Priority:</label>
-                <select id="priority" name="priority" formControlName="priority" required>
-                    <option value="High">High</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Low">Low</option>
-                </select>
-            </div>
 
-            <!-- Requested By field -->
-            <div class="form-group">
-                <label for="requestedBy">Requested By:</label>
-                <input type="text" id="requestedBy" name="requestedBy" formControlName="requestedBy" required>
-            </div>
-
-            <!-- Date field -->
-            <div class="form-group">
-                <label for="date">Date:</label>
-                <input type="date" id="date" name="date" formControlName="date" required>
-            </div>
-
-            <!-- Time field -->
-            <div class="form-group">
-                <label for="time">Time:</label>
-                <input type="time" id="time" name="time" formControlName="time" required>
-            </div>
-
-            <!-- Submit button -->
             <div class="form-group">
                 <button type="submit">Submit</button>
             </div>
